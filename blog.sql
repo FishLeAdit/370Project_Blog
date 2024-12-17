@@ -29,6 +29,7 @@ CREATE TABLE Post (
     content TEXT NOT NULL,
     user_id INT NOT NULL, -- References the User table
     category_id INT,      -- References the Category table
+    likes INT DEFAULT 0,  -- New column to store the number of likes
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
@@ -73,10 +74,10 @@ VALUES
     ('Personal', 'Posts about personal life');
 
 -- 9. Insert Example Posts
-INSERT INTO Post (title, content, user_id, category_id)
+INSERT INTO Post (title, content, user_id, category_id, likes)
 VALUES 
-    ('First Post', 'This is the content of the first post.', 1, 1),
-    ('Life Tips', 'Here are some tips for a better life.', 1, 2);
+    ('First Post', 'This is the content of the first post.', 1, 1, 10),
+    ('Life Tips', 'Here are some tips for a better life.', 1, 2, 5);
 
 -- 10. Insert Example Comments
 INSERT INTO Comment (content, user_id, post_id)

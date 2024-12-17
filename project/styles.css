@@ -1,69 +1,91 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Mono', monospace;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background: url('https://64.media.tumblr.com/d61a959cf42cfbe0869dc4a2c4a58d8f/44622a990e852c6a-65/s1280x1920/831512ad499538fde8f68de4d536a36d1a7e646c.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: white;
+    color: #d5f3fe;
 }
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(20, 20, 40, 0.8); /* Darker semi-transparent black with a hint of blue */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.4); /* Soft neon glow */
 }
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
+    background: linear-gradient(135deg, #ff79c6, #bd93f9); /* Vaporwave gradient */
+    color: #868999;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
 }
 .header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
     font-family: 'Press Start 2P', cursive;
+    color: #50fa7b;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .header a {
-    color: white;
+    color: #f8f8f2;
     text-decoration: none;
     margin-left: 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.header a:hover {
+    color: #ff5555;
 }
 .categories {
     padding: 10px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(50, 50, 100, 0.9); /* Darker blue tint */
     margin-bottom: 20px;
     border-radius: 8px;
+    text-align: center;
 }
 .categories a {
-    color: #1abc9c;
+    color: #8be9fd;
     text-decoration: none;
     margin-right: 10px;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 .categories a:hover {
-    text-decoration: underline;
+    color: #ff79c6;
+    text-shadow: 0px 0px 8px rgba(255, 121, 198, 0.8); /* Neon pink glow */
 }
 .post {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #6272a4;
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
 .post h2 {
-    color: #f39c12;
+    color: #ffb86c;
+    text-shadow: 2px 2px 8px rgba(255, 184, 108, 0.8); /* Soft orange glow */
+    font-family: 'Roboto Mono', monospace;
 }
 .post small {
-    color: #ddd;
+    color: #f8f8f2;
+    font-size: 0.9em;
 }
 .post p {
-    color: #ccc;
+    color: #d5f3fe;
+    line-height: 1.8;
 }
 footer {
     text-align: center;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.9);
+    background: linear-gradient(135deg, #282a36, #44475a);
+    color: #6272a4;
+    font-size: 0.8em;
     margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 121, 198, 0.4); /* Subtle neon footer glow */
 }
