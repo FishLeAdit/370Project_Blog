@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: url('https://64.media.tumblr.com/d61a959cf42cfbe0869dc4a2c4a58d8f/44622a990e852c6a-65/s1280x1920/831512ad499538fde8f68de4d536a36d1a7e646c.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+}
+.header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.categories {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.categories a {
+    color: #1abc9c;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.categories a:hover {
+    text-decoration: underline;
+}
+.post {
+    border-bottom: 1px solid #444;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.post h2 {
+    color: #f39c12;
+}
+.post small {
+    color: #ddd;
+}
+.post p {
+    color: #ccc;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    margin-top: 20px;
+}
