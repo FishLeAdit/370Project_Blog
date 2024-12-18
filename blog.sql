@@ -66,10 +66,10 @@ VALUES
 
 INSERT INTO Post (title, content, user_id, category_id, likes)
 VALUES 
-    ('The Alps - Switzerland', "Travelling through the Alps is like stepping into a living postcard, where towering snow-capped peaks meet lush green valleys and picturesque villages. From the iconic Matterhorn to the charming Swiss and French mountain towns, the Alps invite you to explore not just stunning landscapes, but also rich cultures and unforgettable cuisine. Every turn brings a new vista, making it a dream destination for nature lovers and thrill-seekers alike.", 1, 3, 1),
+    ('The Alps - Switzerland', 'Travelling through the Alps is like stepping into a living postcard, where towering snow-capped peaks meet lush green valleys and picturesque villages. From the iconic Matterhorn to the charming Swiss and French mountain towns, the Alps invite you to explore not just stunning landscapes, but also rich cultures and unforgettable cuisine. Every turn brings a new vista, making it a dream destination for nature lovers and thrill-seekers alike.', 1, 3, 1),
     ('Pokemon TCG', 'Whether you are collecting rare cards, participating in local tournaments, or trading with fellow enthusiasts, each event offers a chance to connect with other trainers and immerse yourself in the vibrant Pokémon universe', 1, 4, 1),
-    ('Apple Bhua', 'While your iPhone might be pretty, Samsung’s out here being the actual MVP of the smartphone world.', 1, 1, 1).
-    ('The importance of Tea', "Tea is more than just a comforting beverage; it is a ritual that brings a sense of calm and clarity. Whether enjoyed in the morning to start the day or as a relaxing evening treat, tea offers a moment of mindfulness. From green tea’s health benefits to the rich flavors of herbal blends, there is a variety to suit every taste. Incorporating a tea routine into daily life can promote relaxation, improve focus, and provide a well-needed break from the chaos of the day.", 1, 2, 1);
+    ('Apple Bhua', 'While your iPhone might be pretty, Samsung’s out here being the actual MVP of the smartphone world.', 1, 1, 1),
+    ('The importance of Tea', 'Tea is more than just a comforting beverage; it is a ritual that brings a sense of calm and clarity. Whether enjoyed in the morning to start the day or as a relaxing evening treat, tea offers a moment of mindfulness. From the health benefits that come from green tea to the rich flavors of herbal blends, there is a variety to suit every taste. Incorporating a tea routine into daily life can promote relaxation, improve focus, and provide a well-needed break from the chaos of the day.',1, 2, 1);
 
 INSERT INTO Comment (content, user_id, post_id)
 VALUES 
