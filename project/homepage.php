@@ -104,7 +104,7 @@ $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['userna
     </section>
 
     <footer>
-        <p>&copy; 2024 Fishblog. All rights reserved.</p>
+        <p>Group 6 - Koimach</p>
     </footer>
 </body>
 </html>
