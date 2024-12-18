@@ -104,7 +104,7 @@ $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['userna
     </section>
 
     <footer>
-        <p>Group 6 - Koimach</p>
+        <p>Group 7 - Koimach</p>
     </footer>
 </body>
 </html>
