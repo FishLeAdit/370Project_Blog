@@ -1,17 +1,14 @@
 <?php
-   $servername = 'localhost';
-   $db_name = 'blog';
-   $user_name = 'root';
-   $user_password = '';
+$servername = "localhost";
+$user_name = "root"; 
+$user_password = "";    
+$db_name = "blog";
 
-   $conn = new mysqli($servername, $user_name, $user_password);
+$conn = new mysqli($servername, $user_name, $user_password, $db_name);
 
-    
-   if ($conn->connect_error){
-      die("failed:".$conn->connect_error);
-   }
-   else{
-      mysqli_select_db($conn,$db_name);
-      
-   }
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} else {
+    echo "Connection successful";
+}
 ?>
