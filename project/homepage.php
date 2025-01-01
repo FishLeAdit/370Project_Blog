@@ -1,8 +1,6 @@
 <?php
-// Start session to handle user login state
 session_start();
 
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,19 +8,16 @@ $dbname = "blog";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch categories
 $category_sql = "SELECT id, name FROM category ORDER BY name ASC";
 $category_result = $conn->query($category_sql);
 
-// Fetch posts (filtered by category if provided)
 $category_id = isset($_GET['category_id']) ? intval($_GET['category_id']) : null;
-$post_sql = "SELECT Post.id, post.title, post.content, post.created_at, user.username, 
-            category.name AS category, post.likes 
+$post_sql = "SELECT post.id, post.title, post.content, post.created_at, user.username, 
+            category.id AS category_id, category.name AS category, post.likes 
             FROM post 
             LEFT JOIN user ON post.user_id = user.id 
             LEFT JOIN category ON post.category_id = category.id";
@@ -33,8 +28,8 @@ if ($category_id) {
 $post_sql .= " ORDER BY post.created_at DESC LIMIT 5";
 $post_result = $conn->query($post_sql);
 
-// Determine if user is logged in
 $is_logged_in = isset($_SESSION['user_id']);
+$is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
 $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['username'] : "Guest";
 ?>
 
@@ -67,6 +62,12 @@ $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['userna
         </div>
     </header>
 
+    <?php if ($is_admin == 1): ?>
+        <div class="container">
+            <a href="write_post.php" class="write-post">Write New Post</a>
+        </div>
+    <?php endif; ?>
+
     <section class="categories container">
         <h2>Categories</h2>
         <?php if ($category_result->num_rows > 0): ?>
@@ -80,6 +81,16 @@ $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['userna
         <?php endif; ?>
     </section>
 
+    <?php if (isset($_SESSION['error_message'])): ?>
+        <p style="color: red;"> <?php echo $_SESSION['error_message']; ?></p>
+        <?php unset($_SESSION['error_message']); ?>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['success_message'])): ?>
+        <p style="color: green;"> <?php echo $_SESSION['success_message']; ?></p>
+        <?php unset($_SESSION['success_message']); ?>
+    <?php endif; ?>
+
     <section class="container">
         <h2>Latest Posts</h2>
         <?php if ($post_result->num_rows > 0): ?>
@@ -88,7 +99,7 @@ $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['userna
                     <h2><?php echo htmlspecialchars($row['title']); ?></h2>
                     <small>
                         By <?php echo htmlspecialchars($row['username'] ?? "Unknown Author"); ?>
-                        in <a href="?category_id=<?php echo $row['id']; ?>" style="color: #1abc9c;">
+                        in <a href="?category_id=<?php echo $row['category_id']; ?>" style="color: #1abc9c;">
                             <?php echo htmlspecialchars($row['category'] ?? "Uncategorized"); ?>
                         </a>
                         on <?php echo htmlspecialchars($row['created_at']); ?> 
@@ -104,7 +115,7 @@ $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['userna
     </section>
 
     <footer>
-        <p>Group 7 - Koimach</p>
+        <p>&copy; 2024 Fishblog. All rights reserved.</p>
     </footer>
 </body>
 </html>

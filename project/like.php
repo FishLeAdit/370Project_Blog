@@ -23,11 +23,23 @@ if ($result->num_rows == 0) {
     $stmt = $conn->prepare($insert_like);
     $stmt->bind_param('ii', $post_id, $user_id);
     $stmt->execute();
+
+    // Increment like count in post table
+    $update_post = "UPDATE post SET likes = likes + 1 WHERE id = ?";
+    $stmt = $conn->prepare($update_post);
+    $stmt->bind_param('i', $post_id);
+    $stmt->execute();
 } else {
     // Remove like
     $delete_like = "DELETE FROM likes WHERE post_id = ? AND user_id = ?";
     $stmt = $conn->prepare($delete_like);
     $stmt->bind_param('ii', $post_id, $user_id);
+    $stmt->execute();
+
+    // Decrement like count in post table
+    $update_post = "UPDATE post SET likes = likes - 1 WHERE id = ?";
+    $stmt = $conn->prepare($update_post);
+    $stmt->bind_param('i', $post_id);
     $stmt->execute();
 }
 
