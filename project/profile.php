@@ -37,7 +37,7 @@ $stmt->close();
 </head>
 <body>
     <header>
-        <h1>Fishblog</h1>
+        <h1>blog</h1>
         <nav>
             <a href="index.php">Home</a>
             <a href="logout.php">Logout</a>
@@ -57,8 +57,5 @@ $stmt->close();
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Fishblog. All rights reserved.</p>
-    </footer>
 </body>
 </html>

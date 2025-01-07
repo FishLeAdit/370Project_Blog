@@ -95,9 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Fishblog. All rights reserved.</p>
-    </footer>
 </body>
 </html>
 

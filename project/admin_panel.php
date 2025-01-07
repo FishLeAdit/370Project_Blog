@@ -131,9 +131,6 @@ $users = $conn->query("SELECT id, username, is_admin FROM User");
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Fishblog. All rights reserved.</p>
-    </footer>
 </body>
 </html>
 

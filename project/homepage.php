@@ -114,9 +114,6 @@ $user_name = ($is_logged_in && isset($_SESSION['username'])) ? $_SESSION['userna
         <?php endif; ?>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Fishblog. All rights reserved.</p>
-    </footer>
 </body>
 </html>
 
