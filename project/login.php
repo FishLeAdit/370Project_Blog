@@ -47,5 +47,6 @@ $conn->close();
         <input type="password" name="password" required><br>
         <button type="submit">Login</button>
     </form>
+    <p>Don't have an account? <a href="signup.php">Register</a></p>
 </body>
 </html>
